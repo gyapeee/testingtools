@@ -1,0 +1,4 @@
+#ignore nightwatch
+nightwatch/node_modules/
+nightwatch/tests_output/
+nightwatch/screens/
