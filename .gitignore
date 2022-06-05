@@ -1,4 +1,10 @@
-#ignore nightwatch
+#ignore nightwatch related stuff
 nightwatch/node_modules/
 nightwatch/tests_output/
 nightwatch/screens/
+
+#ignore webdriver.io related stuff
+webdriver.io/node_modules/
+
+
+#ignore cypress related stuff
