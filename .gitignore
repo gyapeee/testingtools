@@ -8,3 +8,4 @@ webdriver.io/node_modules/
 
 
 #ignore cypress related stuff
+cypress/node_modules/
