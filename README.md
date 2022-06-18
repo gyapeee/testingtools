@@ -41,6 +41,8 @@
 ### install supported browsers: npx playwright install
 #### previous command downloads browser exe files on windos so antivirus can detect them as IDP.Generic. In this case add them as exceptions.
 ### run tests dwells in playwright/tests/ folder: npx playwright test --headed
+### playwright/test-results/ contains failing trace.zip files
+
 
 
 <br/>
