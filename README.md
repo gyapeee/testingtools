@@ -2,6 +2,8 @@
 
 ## nightwatch.js
 
+### do the next commands in the nightwatch subfolder
+
 ### original install: npm install nightwatch --save-dev
 
 ### separate webdriver install is needed: npm install chromedriver --save-dev
@@ -13,18 +15,20 @@
 
 ## webdriver.io
 
+### do the next commands in the webdriver.io subfolder
+
 ### original install: npm init wdio .
 
 ### accept everything and select logically(like select)
 
 ### run an example test built in webdriver.io in chrome:
 
-### cd webdriver.io
-
 ### npx wdio run .\wdio.conf.js
 <br/>
 
 ## cypress
+
+### do the next commands in the cypress subfolder
 
 ### original install: npm install cypress --save-dev
 
@@ -42,7 +46,8 @@
 #### previous command downloads browser exe files on windos so antivirus can detect them as IDP.Generic. In this case add them as exceptions.
 ### run tests dwells in playwright/tests/ folder: npx playwright test --headed
 ### playwright/test-results/ contains failing trace.zip files
-
+### show trace: npx playwright show-trace playwright\test-results\tests-basic-basic-failing-test-to-demostrate-retry-chromium-retry1\trace.zip
+### show trace online: go to https://trace.playwright.dev/ and drag and drop the corresponding trace.zip
 
 
 <br/>
