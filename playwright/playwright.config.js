@@ -8,6 +8,7 @@ const config = {
   retries: process.env.CI ? 2 : 1,         // Retry tests twice on CI, once locally
   workers: process.env.CI ? 2 : undefined, // Limit the number of workers on CI, use default locally
   use: {
+    headless: false,
     trace: 'on-first-retry',
   },
   projects: [

@@ -1,4 +1,5 @@
 # testingtools
+this project gives a playground to be able to compare nightwatch, webdriver.io, cypress and playwright. usually the npm i will install the actual tool in the tool's dir.
 
 ## nightwatch.js
 
@@ -54,5 +55,7 @@ playwright/test-results/ contains failing trace.zip files
 show trace: npx playwright show-trace playwright\test-results\tests-basic-basic-failing-test-to-demostrate-retry-chromium-retry1\trace.zip
 
 show trace online: go to https://trace.playwright.dev/ and drag and drop the corresponding trace.zip
+
+codegen: npx playwright codegen https://sdk-playground.chamaileon.io/emaileditor#home
 
 <br/>
