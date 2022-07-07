@@ -30,5 +30,5 @@ test('Embedded iframe test on Chamaileon', async ({ page }) => {
   await page.frameLocator('#editor-wrapper iframe >> nth=0').locator('button:has-text("OK")').click();
   
   // Click .text-center.singleElement.shadowed.element-icon-fullwidth > .container
-  await page.frameLocator('#editor-wrapper iframe >> nth=0').locator('.text-center.singleElement.shadowed.element-icon-fullwidth > .container').click();
+  await page.frameLocator('#editor-wrapper iframe').locator('//div[@drag-object="fullwidth"]').click();
 });
