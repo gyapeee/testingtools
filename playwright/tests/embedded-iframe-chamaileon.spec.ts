@@ -5,12 +5,7 @@ test('Embedded iframe test on Chamaileon', async ({ page }) => {
   // Go to https://sdk-playground.chamaileon.io/emaileditor#home
   await page.goto('https://sdk-playground.chamaileon.io/emaileditor#home');
   
-  // Go to https://sdk-playground.chamaileon.io/emaileditor#
-  await page.goto('https://sdk-playground.chamaileon.io/emaileditor#');
-  
-  // Go to https://sdk-playground.chamaileon.io/emaileditor#home
-  await page.goto('https://sdk-playground.chamaileon.io/emaileditor#home');
-  
+
   // Click a:has-text("Block Libraries")
   await Promise.all([
     page.waitForNavigation(/*{ url: 'https://sdk-playground.chamaileon.io/emaileditor#block-libraries' }*/),
