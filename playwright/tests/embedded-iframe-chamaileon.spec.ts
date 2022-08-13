@@ -17,9 +17,11 @@ test("Embedded iframe test on Chamaileon", async ({ page }) => {
   await page.locator('button:has-text("Open editor")').first().click();
 
   // Click text=Drag and drop elements into the editor area Content TEXT IMAGE BUTTON DIVIDER SO >> button
+  // v-icon notranslate mdi mdi-close theme--dark
+  // v-btn v-btn--icon v-btn--round theme--dark v-size--large
   await page
     .frameLocator("#editor-wrapper iframe >> nth=0")
-    .locator(".close-btn-wrapper")
+    .locator(".close-btn-wrapper > .v-btn--icon > span > .v-icon") // span .v-icon
     .click();
 
   // Click button:has-text("OK")
