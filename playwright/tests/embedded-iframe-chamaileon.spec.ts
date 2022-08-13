@@ -10,23 +10,11 @@ test("Embedded iframe test on Chamaileon", async ({ page }) => {
     page.locator('a:has-text("Block Libraries")').click(),
   ]);
 
-  // Click button:has-text("Block")
+  // Click button:has-text(" New Library ")
   await page.locator('button:has-text(" New Library ")').click();
 
   // Click button:has-text("Open editor") >> nth=0
   await page.locator('button:has-text("Open editor")').first().click();
-
-  // click strong:has-test("Our Portfolio
-
-  // css class contains: mdi-dots-horizontal
-
-  // css class contains: mdi-folder-download
-
-  // has-text: Save to...
-
-  // has-text: Block Library 0
-
-  // has-text: SAVE
 
   // Click text=Drag and drop elements into the editor area Content TEXT IMAGE BUTTON DIVIDER SO >> button
   await page
@@ -40,14 +28,52 @@ test("Embedded iframe test on Chamaileon", async ({ page }) => {
     .locator('button:has-text("OK")')
     .click();
 
-  // has-text:  Blocks
+  // Click text=New Block Our PortfolioOur Portfolio PERFECTLY SIMPLE DESIGNPERFECTLY SIMPLE DES >> button
+  await page
+    .frameLocator("#editor-wrapper iframe >> nth=0")
+    .locator("text=Home >> nth=1")
+    .click();
+
+  // Click text=New Block Our PortfolioOur Portfolio PERFECTLY SIMPLE DESIGNPERFECTLY SIMPLE DES >> button >> nth=2
+  await page
+    .frameLocator("#editor-wrapper iframe >> nth=0")
+    .locator(".v-speed-dial--direction-bottom button")
+    .click();
+
+  // saveButton canvas-floating-btn v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--small
+  await page
+    .frameLocator("#editor-wrapper iframe >> nth=0")
+    .locator(".saveButton")
+    .click();
 
   await page
     .frameLocator("#editor-wrapper iframe >> nth=0")
-    .locator('strong:has-text("Our Portfolio")')
+    .locator('"Save to..."')
+    .click();
+
+  // Click div[role="option"] div:has-text("Block Library 0") >> nth=0
+  await page
+    .frameLocator("#editor-wrapper iframe >> nth=0")
+    .locator('div[role="option"] div:has-text("Block Library 0")')
     .first()
     .click();
 
-  //duzmmy for debug
-  await page.locator('button:has-text("Open editor")').first().click();
+  // Click button:has-text("SAVE")
+  await page
+    .frameLocator("#editor-wrapper iframe >> nth=0")
+    .locator('button:has-text("SAVE")')
+    .click();
+
+  // Click text=Blocks
+  await page
+    .frameLocator("#editor-wrapper iframe >> nth=0")
+    .locator("text=Blocks")
+    .click();
+
+  // Click #thumbnail-0-cover
+  await page
+    .frameLocator("#editor-wrapper iframe >> nth=0")
+    .frameLocator("iframe")
+    .locator('"Site"')
+    .click();
 });
