@@ -1,4 +1,5 @@
 # testingtools
+
 this project gives a playground to be able to compare nightwatch, webdriver.io, cypress and playwright. usually the npm i will install the actual tool in the tool's dir.
 
 ## nightwatch.js
@@ -49,6 +50,8 @@ install supported browsers: npx playwright install
 previous command downloads browser exe files on windos so antivirus can detect them as IDP.Generic. In this case add them as exceptions.
 
 run tests (dwells in playwright/tests/ folder): npx playwright test --headed
+
+run one individual test: npx playwright test tests/embedded-iframe-chamaileon.spec.ts
 
 playwright/test-results/ contains failing trace.zip files
 
