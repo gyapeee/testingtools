@@ -4,7 +4,7 @@
 
 This is a project where different testing frameworks are demonstrated 
 
-## playwright
+## playwright (maintained)
 
 [Read more about playwright](./playwright/PLAYWRIGHT.md)
 
