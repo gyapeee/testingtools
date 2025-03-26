@@ -1,6 +1,13 @@
+
+
 # testingtools
 
-this project gives a playground to be able to compare nightwatch, webdriver.io, cypress and playwright. usually the npm i will install the actual tool in the tool's dir.
+This is a project where different testing frameworks are demonstrated 
+
+## playwright
+
+[Read more about playwright](./playwright/PLAYWRIGHT.md)
+
 
 ## nightwatch.js
 
@@ -39,26 +46,4 @@ open cypress in chrome: npx cypress open
 select the options to have a basic E2E test config in cypress
 
 generate examples and navigate to the runner page
-<br/>
-
-## playwright
-
-<!-- original install playwright core: npm i -D @playwright/test -->
-
-install supported browsers: npx playwright install
-
-previous command downloads browser exe files on windos so antivirus can detect them as IDP.Generic. In this case add them as exceptions.
-
-run tests (dwells in playwright/tests/ folder): npx playwright test --headed
-
-run one individual test: npx playwright test tests/embedded-iframe-chamaileon.spec.ts
-
-playwright/test-results/ contains failing trace.zip files
-
-show trace: npx playwright show-trace playwright\test-results\tests-basic-basic-failing-test-to-demostrate-retry-chromium-retry1\trace.zip
-
-show trace online: go to https://trace.playwright.dev/ and drag and drop the corresponding trace.zip
-
-codegen: npx playwright codegen https://sdk-playground.chamaileon.io/emaileditor#home
-
 <br/>
