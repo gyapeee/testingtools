@@ -40,8 +40,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
-          path: ${{ env.PLAYWRIGHT_DIR }}/playwright-report/ 
-          retention-days: 7
+          path: ${{ env.PLAYWRIGHT_DIR }}/playwright-report/
+        if: always()  # Ensure this runs regardless of the test outcome
 
   deploy:
     needs: test
