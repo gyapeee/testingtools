@@ -13,3 +13,4 @@ cypress/node_modules/
 #ignore cypress related stuff
 playwright/node_modules/
 playwright/test-results/
+playwright/playwright-report/
