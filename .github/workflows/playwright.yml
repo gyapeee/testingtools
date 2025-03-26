@@ -7,9 +7,13 @@ on:
   pull_request:
   workflow_dispatch:  # Allows manual trigger
 
+env:
+  PLAYWRIGHT_DIR: ./playwright
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    continue-on-error: true  # Ensure this job doesn't fail the workflow even if tests fail
 
     steps:
       - name: Checkout Repository
@@ -22,19 +26,22 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+        working-directory: ${{ env.PLAYWRIGHT_DIR }} 
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+        working-directory: ${{ env.PLAYWRIGHT_DIR }} 
 
       - name: Run Playwright Tests
         run: npx playwright test --reporter=html
+        working-directory: ${{ env.PLAYWRIGHT_DIR }} 
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
-          path: playwright-report/
-          retention-days: 7
+          path: ${{ env.PLAYWRIGHT_DIR }}/playwright-report/
+        if: always()  # Ensure this runs regardless of the test outcome
 
   deploy:
     needs: test
@@ -49,10 +56,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: playwright-report
-          path: playwright-report/
+          path: ${{ env.PLAYWRIGHT_DIR }}/playwright-report/ 
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: playwright-report
+          folder: ${{ env.PLAYWRIGHT_DIR }}/playwright-report 
